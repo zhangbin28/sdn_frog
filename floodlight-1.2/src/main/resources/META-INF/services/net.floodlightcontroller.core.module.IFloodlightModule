@@ -29,4 +29,4 @@ net.floodlightcontroller.dhcpserver.DHCPServer
 net.floodlightcontroller.learningswitch.LearningSwitch
 net.floodlightcontroller.statistics.StatisticsCollector
 net.floodlightcontroller.bandwidth.Bandwidth
-net.floodlightcontroller.bandwidthguarantee.BandwidthGuarantee
+net.floodlightcontroller.frogqos.FrogQos

@@ -253,7 +253,7 @@ public class BandwidthGuarantee extends JFrame implements IOFMessageListener,
 	}
 
 	@Override
-	public net.floodlightcontroller.core.IListener.Command receive(
+	public Command receive(
 			IOFSwitch sw, OFMessage msg, FloodlightContext cntx) {
 		// TODO Auto-generated method stub
 		Ethernet eth = IFloodlightProviderService.bcStore.get(cntx, IFloodlightProviderService.CONTEXT_PI_PAYLOAD); 
@@ -640,6 +640,7 @@ public class BandwidthGuarantee extends JFrame implements IOFMessageListener,
 				Iterator<OFQueueStatsEntry> entryiter = entrylist.iterator();
 				long value = 0;
 				double rate = 0;
+				logger.info("!!!!!!!gur size: "+entrylist.size());
 				while (entryiter.hasNext()) {
 					OFQueueStatsEntry entry = entryiter.next();
 					if(entry.getPortNo().equals(OFPort.of(1))){
@@ -866,7 +867,7 @@ public class BandwidthGuarantee extends JFrame implements IOFMessageListener,
        //OutputStream out;   
        try {   
 	       //out = new FileOutputStream("MyXml.xml");   
-	       java.beans.XMLEncoder encoder = new XMLEncoder(out);   
+	       XMLEncoder encoder = new XMLEncoder(out);
 	       encoder.writeObject(videospeed);   
 	       encoder.writeObject(ftpspeed);
 	       encoder.close();   
